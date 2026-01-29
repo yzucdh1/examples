@@ -102,6 +102,7 @@ const erc20ABIJSON = `[
 ]`
 
 func main() {
+	// 命令行参数
 	mode := flag.String("mode", "balance", "operation mode: balance, transfer, or parse-event")
 	contractHex := flag.String("contract", "", "ERC-20 contract address")
 	addrHex := flag.String("address", "", "address (for balanceOf or transfer to)")

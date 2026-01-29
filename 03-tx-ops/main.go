@@ -21,6 +21,7 @@ import (
 // 1. 查询交易：--tx <hash> - 按哈希查询交易与回执，解析关键字段
 // 2. 发送交易：--send --to <address> --amount <eth> - 发起 ETH 转账交易
 func main() {
+	// 命令行参数
 	txHashHex := flag.String("tx", "", "transaction hash (for query mode)")
 	sendMode := flag.Bool("send", false, "enable send transaction mode")
 	toAddrHex := flag.String("to", "", "recipient address (required for send mode)")

@@ -26,6 +26,7 @@ func main() {
 		log.Fatal("ETH_WS_URL or ETH_RPC_URL must be set")
 	}
 
+	// 取消功能的上下文,不需要超时时间,长连接
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 
@@ -35,6 +36,7 @@ func main() {
 	}
 	defer client.Close()
 
+	// 创建types.Header 通道
 	headers := make(chan *types.Header)
 	sub, err := client.SubscribeNewHead(ctx, headers)
 	if err != nil {
